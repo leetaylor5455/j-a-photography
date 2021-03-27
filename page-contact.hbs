@@ -1,0 +1,70 @@
+{{!< default}}
+
+<div class="split-view">
+    <div class="split-image">
+        <img src="../assets/images/jamie-portrait.jpg" alt="Portrait of Me">
+    </div>
+    <div class="contact-side">
+        <div class="contact-form">
+            <div class="greeting">I'd love to work with you</div>
+            <form id="form" method="POST" action="https://formspree.io/f/xwkaeroy">
+
+                <div class="form-row">
+                    <input type="text" placeholder="First Name" name="fname" autofocus>
+                    <input type="text" placeholder="Last Name" name="lname">
+                </div>
+                
+                <div class="form-row">
+                    <input type="email" placeholder="Email" name="email">
+                    <input type="tel" placeholder="Phone Number" name="tel">
+                </div>
+                
+                <textarea name="message" id="message" rows="1" placeholder="Message"></textarea>
+
+                <ul id="submission-messages"></ul>
+                
+                <button id="submit-button"><img src="../assets/icons/submit-button.svg" alt="Submit button"></button>
+                
+            </form>
+
+            <div class="link-to-email">
+                <p style="color: #828282">Or email me at</p>
+                <a href="mailto:jamieapplebyphotography@gmail.com">jamieapplebyphotography@gmail.com</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var observe;
+    if (window.attachEvent) {
+        observe = function (element, event, handler) {
+            element.attachEvent('on'+event, handler);
+        };
+    }
+    else {
+        observe = function (element, event, handler) {
+            element.addEventListener(event, handler, false);
+        };
+    }
+    function init() {
+        var text = document.getElementById('message');
+        function resize () {
+            text.style.height = 'auto';
+            text.style.height = text.scrollHeight+'px';
+        }
+        /* 0-timeout to get the already changed text */
+        function delayedResize () {
+            window.setTimeout(resize, 0);
+        }
+        observe(text, 'change',  resize);
+        observe(text, 'cut',     delayedResize);
+        observe(text, 'paste',   delayedResize);
+        observe(text, 'drop',    delayedResize);
+        observe(text, 'keydown', delayedResize);
+
+        resize();
+    }
+
+    init();
+</script>

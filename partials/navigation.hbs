@@ -1,0 +1,26 @@
+<div class="static-top">
+    <div class="top-left">
+        <div class="nav-button">
+            <div class="row 1"></div>
+            <div class="row 2"></div>
+            <div class="row 3"></div>
+        </div>
+        <h1 class="brand"><a href="/">Jamie Appleby</a></h1>
+    </div>
+    
+    <div class="link-to-instagram">
+        <a href="https://www.instagram.com/jamieapplebyphotography/" target="_blank" rel="noopener noreferrer"><img src="../assets/icons/intagram.svg" alt="Instagram ->"></a>
+    </div>
+</div>
+<nav class="nav-wrapper">
+    <ul class="nav-links">
+        <!-- Loop through the navigation items -->
+        {{#foreach navigation}}
+            <li class="nav-{{slug}}{{#if current}} nav-current{{/if}}">
+                <a href="{{url absolute="true"}}">{{label}}</a>
+            </li>
+        {{/foreach}}
+        <!-- End the loop -->
+    </ul>
+    
+</nav>

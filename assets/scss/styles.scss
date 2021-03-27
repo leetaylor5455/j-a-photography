@@ -1,0 +1,20 @@
+@import 'colours.scss';
+
+html { height: 100% }
+
+body { 
+    height: 100%; 
+    margin: 0;
+    padding: 0; 
+}
+
+html {
+    font-family: 'Playfair Display', sans-serif;
+    background-color: $offwhite;
+    color: $dark;
+}
+
+.flex-wrapper {
+    display: flex;
+    // height: 100%;
+}

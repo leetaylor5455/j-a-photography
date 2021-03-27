@@ -1,0 +1,13 @@
+@import 'colours.scss';
+
+footer {
+    margin: 20px;
+    padding-bottom: 15px;
+
+    a {
+        text-decoration: none;
+        color: $dark;
+        display: block;
+        margin-bottom: 6px;
+    }
+}
