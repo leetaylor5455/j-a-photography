@@ -251,6 +251,24 @@ footer {
         color: #1f1f1f;
         text-decoration: none; }
 
+.dropdown .dropdown-icon {
+  width: 7px;
+  margin-left: 8px;
+  transition: .6s ease;
+  cursor: pointer; }
+
+.dropdown .dropdown-child {
+  font-size: 15px;
+  height: 0px;
+  overflow: hidden;
+  transition: .6s ease; }
+  .dropdown .dropdown-child a {
+    display: block;
+    margin-top: 10px; }
+
+.up {
+  transform: rotateX(-180deg) translateY(2px); }
+
 @media only screen and (min-width: 1251px) {
   .nav-wrapper {
     display: block;

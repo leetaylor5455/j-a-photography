@@ -16,9 +16,34 @@
     <ul class="nav-links">
         <!-- Loop through the navigation items -->
         {{#foreach navigation}}
-            <li class="nav-{{slug}}{{#if current}} nav-current{{/if}}">
-                <a href="{{url absolute="true"}}">{{label}}</a>
-            </li>
+            {{#if_equals slug "fashion"}} <!-- Fashion Dropdown Link -->
+                <li class="nav-{{slug}}{{#if current}} nav-current{{/if}} dropdown">
+                    <div class="dropdown-parent"><a href="{{url absolute="true"}}">{{label}}</a><img class="dropdown-icon" src="../assets/icons/dropdown.svg" alt="Dropdown Icon">
+                        <div class="dropdown-child">
+                            <a href="/thrasher">Archive</a>
+                            <a href="/thrasher">Portraiture</a>
+                        </div>
+                    </div>
+                </li>
+
+                {{else}}
+
+                {{#if_equals slug "documentary"}} <!-- Portraiture Dropdown Link -->
+                    <li class="nav-{{slug}}{{#if current}} nav-current{{/if}} dropdown">
+                        <div class="dropdown-parent"><a href="{{url absolute="true"}}">{{label}}</a><img class="dropdown-icon" src="../assets/icons/dropdown.svg" alt="Dropdown Icon">
+                            <div class="dropdown-child">
+                                <a href="/thrasher">Thrasher - a brand involvement</a>
+                            </div>
+                        </div>
+                    </li>
+
+                {{else}} <!-- Standard Link -->
+                    <li class="nav-{{slug}}{{#if current}} nav-current{{/if}}">
+                        <a href="{{url absolute="true"}}">{{label}}</a>
+                    </li>
+
+                {{/if_equals}}
+            {{/if_equals}}
         {{/foreach}}
         <!-- End the loop -->
     </ul>

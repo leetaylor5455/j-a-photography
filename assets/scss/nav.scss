@@ -89,6 +89,31 @@
     }
 }
 
+.dropdown {
+    .dropdown-icon {
+        width: 7px;
+        margin-left: 8px;
+        transition: .6s ease;
+        cursor: pointer;
+    }
+
+    .dropdown-child {
+        font-size: 15px;
+        height: 0px;
+        overflow: hidden;
+        transition: .6s ease;
+
+        a {
+            display: block;
+            margin-top: 10px;
+        }
+    }
+}
+
+.up {
+    transform: rotateX(-180deg) translateY(2px);
+}
+
 @media only screen and (min-width: 1251px) {
     .nav-wrapper {
         display: block;
