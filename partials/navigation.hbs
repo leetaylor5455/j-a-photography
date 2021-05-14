@@ -16,23 +16,23 @@
     <ul class="nav-links">
         <!-- Loop through the navigation items -->
         {{#foreach navigation}}
-            {{#if_equals slug "fashion"}} <!-- Fashion Dropdown Link -->
+            {{#has slug="fashion"}} <!-- Fashion Dropdown Link -->
                 <li class="nav-{{slug}}{{#if current}} nav-current{{/if}} dropdown">
-                    <div class="dropdown-parent"><a href="{{url absolute="true"}}">{{label}}</a><img class="dropdown-icon" src="../assets/icons/dropdown.svg" alt="Dropdown Icon">
+                    <div class="dropdown-parent">{{label}}<img class="dropdown-icon" src="../assets/icons/dropdown.svg" alt="Dropdown Icon">
                         <div class="dropdown-child">
-                            <a href="/thrasher">Archive</a>
-                            <a href="/thrasher">Portraiture</a>
+                            <a href="/portraiture">Portraiture</a>
                         </div>
                     </div>
                 </li>
 
                 {{else}}
 
-                {{#if_equals slug "documentary"}} <!-- Portraiture Dropdown Link -->
+                {{#has slug="documentary"}} <!-- Portraiture Dropdown Link -->
                     <li class="nav-{{slug}}{{#if current}} nav-current{{/if}} dropdown">
-                        <div class="dropdown-parent"><a href="{{url absolute="true"}}">{{label}}</a><img class="dropdown-icon" src="../assets/icons/dropdown.svg" alt="Dropdown Icon">
+                        <div class="dropdown-parent">{{label}}<img class="dropdown-icon" src="../assets/icons/dropdown.svg" alt="Dropdown Icon">
                             <div class="dropdown-child">
                                 <a href="/thrasher">Thrasher - a brand involvement</a>
+                                <a href="/archive">Archive</a>
                             </div>
                         </div>
                     </li>
@@ -42,8 +42,8 @@
                         <a href="{{url absolute="true"}}">{{label}}</a>
                     </li>
 
-                {{/if_equals}}
-            {{/if_equals}}
+                {{/has}}
+            {{/has}}
         {{/foreach}}
         <!-- End the loop -->
     </ul>

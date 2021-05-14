@@ -209,7 +209,7 @@ footer {
     .static-top .top-left .brand {
       font-family: 'Playfair Display', serif;
       text-transform: uppercase;
-      font-size: 28px;
+      font-size: 26px;
       font-weight: normal;
       letter-spacing: 0.3em;
       margin: 0; }
@@ -251,6 +251,9 @@ footer {
         color: #1f1f1f;
         text-decoration: none; }
 
+.dropdown .dropdown-parent {
+  cursor: pointer; }
+
 .dropdown .dropdown-icon {
   width: 7px;
   margin-left: 8px;
@@ -286,12 +289,23 @@ footer {
       margin-top: 35vh;
       font-size: 24px; }
   .brand {
-    padding-left: 30px;
-    font-size: 26px !important; }
+    padding-left: 30px; }
   .nav-button {
     display: flex !important; }
   .link-to-instagram img {
     height: 26px !important; } }
+
+@media only screen and (max-width: 450px) {
+  .brand {
+    font-size: 22px !important;
+    letter-spacing: 0.18em !important;
+    padding-left: 15px; }
+  .link-to-instagram {
+    margin: 18px 16px 0 0 !important; }
+    .link-to-instagram img {
+      width: 23px !important; }
+  .image-section {
+    margin: 8px; } }
 
 html {
   height: 100%; }
@@ -299,7 +313,8 @@ html {
 body {
   height: 100%;
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  -webkit-tap-highlight-color: transparent; }
 
 html {
   font-family: 'Playfair Display', sans-serif;
