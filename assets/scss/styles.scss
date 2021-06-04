@@ -7,7 +7,13 @@ body {
     margin: 0;
     padding: 0;
     -webkit-tap-highlight-color: transparent; 
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
 }
+
+body::-webkit-scrollbar {
+    display: none;
+  }
 
 html {
     font-family: 'Playfair Display', sans-serif;
@@ -17,5 +23,5 @@ html {
 
 .flex-wrapper {
     display: flex;
-    // height: 100%;
+    height: auto;
 }

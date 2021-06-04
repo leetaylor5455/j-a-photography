@@ -14,11 +14,13 @@
         </div>
         <div class="image-mask">
             <div class="images-wrapper">
-                {{#get "posts" filter="tags:{{tag}}"}}
+                {{#get "posts" filter="tags:{{tag}}" order="updated_at desc"}}
 
                     {{#foreach posts}}
 
-                        <img src="{{img_url feature_image}}" alt="">
+                        <div class="image-container">
+                            <img src="{{img_url feature_image}}" alt="">
+                        </div>
 
                     {{/foreach}}
 

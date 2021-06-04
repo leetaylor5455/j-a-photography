@@ -68,8 +68,10 @@ $(function() {
     $('.next').on('click', function() {
         const location = getCurrentPos() - 100;
 
-        if (location > numberOfImages * 100 * -1) {
+        if (location > numberOfImages * -100) {
             moveTo(location);
+        } else if (location == numberOfImages * -100) {
+            moveTo(0);
         }
     });
 
